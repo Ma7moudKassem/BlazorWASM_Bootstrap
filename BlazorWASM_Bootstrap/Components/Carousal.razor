@@ -2,38 +2,38 @@
 
 <div id="@carouselName" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-wrap="true" data-bs-interval="2000" data-bs-pause="false">
     <div class="carousel-indicators">
-        @for (int i = 0; i < Alt.Count; i++)
+        @for (int i = 0; i < Elements.Count; i++)
         {
             if (i == 0)
             {
-                <button type="button" data-bs-target="#@carouselName" data-bs-slide-to="@i" class="active" aria-current="true" aria-label="@Alt.ElementAt(i)"></button>
+                <button type="button" data-bs-target="#@carouselName" data-bs-slide-to="@i" class="active" aria-current="true" aria-label="@Elements[i].Alt"></button>
             }
             else
             {
-                <button type="button" data-bs-target="#@carouselName" data-bs-slide-to="@i" aria-label="@Alt.ElementAt(i)"></button>
+                <button type="button" data-bs-target="#@carouselName" data-bs-slide-to="@i" aria-label="@Elements[i].Alt"></button>
             }
         }
     </div>
     <div class="carousel-inner">
-        @for (int i = 0; i < Images.Count; i++)
+        @for (int i = 0; i < Elements.Count; i++)
         {
             if (i == 0)
             {
                 <div class="carousel-item active">
-                    <img src="@Images.ElementAt(i)" class="d-block w-100" alt="@Alt.ElementAt(i)">
+                    <img src="@Elements[i].Images" class="d-block w-100" alt="@Elements[i].Alt">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>@Labels.ElementAt(i)</h5>
-                        <p>@Description.ElementAt(i)</p>
+                        <h5>@Elements[i].Labels</h5>
+                        <p>@Elements[i].Description</p>
                     </div>
                 </div>
             }
             else
             {
                 <div class="carousel-item">
-                    <img src="@Images.ElementAt(i)" class="d-block w-100" alt="@Alt.ElementAt(i)">
+                    <img src="@Elements[i].Images" class="d-block w-100" alt="@Elements[i].Alt">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>@Labels.ElementAt(i)</h5>
-                        <p>@Description.ElementAt(i)</p>
+                        <h5>@Elements[i].Labels</h5>
+                        <p>@Elements[i].Description</p>
                     </div>
                 </div>
             }
@@ -52,16 +52,7 @@
 @code{
 
     [Parameter]
-    public List<string> Images { get; set; }
-
-    [Parameter]
-    public List<string> Labels { get; set; }
-
-    [Parameter]
-    public List<string> Description { get; set; }
-
-    [Parameter]
-    public List<string> Alt { get; set; }
+    public List<CarouselElements> Elements { get; set; }
 
     const string carouselName = "CarouselDiv";
     const string carouselFunctionName = "startCarousel";
