@@ -1,8 +1,5 @@
-﻿function startCarousel(carousellId) {
-    var myCarousel = document.getElementById(carousellId);
+﻿function startCarousel(carouselId) {
+    var myCarousel = document.getElementById(carouselId);
     var carousel = new bootstrap.Carousel(myCarousel);
     carousel.cycle();
-}
-function sayHello(name) {
-    return "Hello" + name;
 }
