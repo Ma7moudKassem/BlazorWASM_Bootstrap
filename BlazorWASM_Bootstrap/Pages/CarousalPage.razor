@@ -1,0 +1,44 @@
+﻿@page "/carousel"
+@using BlazorWASM_Bootstrap.Components
+
+<h3>Carousal</h3>
+
+<Carousal Images=imagesUrl Alt=alts Labels=labels Description=describtion />
+@code
+{
+    public List<string> imagesUrl = new List<string>()
+    {
+        "https://picsum.photos/id/196/1920/1080",
+        "https://picsum.photos/id/1057/1920/1080",
+        "https://picsum.photos/id/1067/1920/1080",
+        "https://picsum.photos/id/190/1920/1080",
+        "https://picsum.photos/id/160/1920/1080",
+    };
+
+    public List<string> labels = new List<string>()
+    {
+        "First slide label",
+        "Second slide label",
+        "Third slide label",
+        "Fourth slide label",
+        "Fifth slide label",
+    };
+    public List<string> alts = new List<string>()
+    {
+        "Slide1",
+        "Slide2",
+        "Slide3",
+        "Slide4",
+        "Slide5",
+    };
+    public List<string> describtion = new List<string>()
+    {
+        "Some representative placeholder content for the First slide",
+        "Some representative placeholder content for the Second slide",
+        "Some representative placeholder content for the third slide",
+        "Some representative placeholder content for the Fourth slide",
+        "Some representative placeholder content for the Fifth slide",
+
+    };
+
+}

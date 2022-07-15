@@ -3,3 +3,6 @@
     var carousel = new bootstrap.Carousel(myCarousel);
     carousel.cycle();
 }
+function sayHello(name) {
+    return "Hello" + name;
+}
